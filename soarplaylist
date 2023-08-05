@@ -1,0 +1,305 @@
+game.Players.LocalPlayer.Chatted:Connect(function(msg) -- i need to delete old !delaudio
+    if string.sub(msg:lower(), 0, 5) == "pause" then 
+        for _, sound in pairs(workspace.Terrain._Game.Folder:GetDescendants()) do
+            if sound:IsA("Sound") and sound.Playing then
+                sound.Playing = false
+            end
+        end
+        game.Players:Chat("h/ n\n\n\n\n\n\n\n\n\nPaused\n\n\n\n\n\n\n\n")
+    elseif string.sub(msg:lower(), 0, 4) == "play" then
+        for _, sound in pairs(workspace.Terrain._Game.Folder:GetDescendants()) do
+            if sound:IsA("Sound") and not sound.Playing then
+                sound.Playing = true
+            end
+        end
+        game.Players:Chat("h/ n\n\n\n\n\n\n\n\n\nPlaying\n\n\n\n\n\n\n\n")
+    end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "!delaudio" then
+        game.Players:Chat("h/ n\n\n\n\n\n\n\n\n\nAudioDeleted\n\n\n\n\n\n\n\n")
+    end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "!vibes" then
+        game.Players:Chat("time -")
+        game.Players:Chat("ambient 0 0 0")
+        game.Players:Chat("outdoorambient 0 0 0")
+        game.Players:Chat("colorshiftbottom 255 192 203")
+        game.Players:Chat("colorshifttop 255 192 203")
+        game.Players:Chat("fogend 2000")
+        game.Players:Chat("fogstart 10")
+        game.Players:Chat("fogcolor 255 100 255")
+        game.Players:Chat("glow all 160 20 150")
+    end
+end)
+
+
+local songIds = {
+    {9043892984, 200, "dele mami"},
+    {9043878179, 200, "Kikbak ft Styliztik & Kaisha"},
+    {1840040963, 200, "Rhythm"},
+    {1841443579, 200, "tripping on love"},
+    {7029017448, 206, "play it cool - terry zchong"},
+    {1846808350, 200, "get up and boogy"},
+    {7023741506, 200, "Elypsis - i miss you"},
+    {1848220276, 200, "different than normal"},
+    {9042523170, 200, "come closer -- reginald keith"},
+    {9043876028, 200, "flexxin on the gram"},
+    {9043893928, 200, "sin remordimientos"},
+    {9043870264, 200, "shumba - real friend"},
+    {6901063458, 200, "rihanna SOS"},
+    {7024035759, 250, "dexter king - get to know you"},
+    {1835662728, 200, "unknown"},
+    {29040163991, 200, "Soviet Anthem"},
+    {1836807218, 200, "soarcrash"},
+    {183736729, 201, "Hound Dogs of Love"},
+    {1840003540, 200, "Tell it to yourself"},
+    {1838488910, 230, "Take the Road"},
+    {1837871444, 230, "Your love is Anarchy"},
+    {1843324953, 235, "Night out"},
+    {1840047556, 235, "So bad - Juice music"},
+    {1838569831, 235, "Never gonna give you up"},
+    {1837258874, 131, "la cucaracha😃😜😀"},
+    {1843434135, 235, "Twisted Love"},
+    {1837881688, 185, "Shattered Heart"},
+    {1837848096, 220, "Feels good to Cry"},
+    {9042524725, 33, "Space"},
+    {9045373969, 235, "A lo Caliche"},
+    {9047105584, 235, "On the Verge"},
+    {1836736337, 235, "Just Wanna Dance"},
+    {1836736337, 140, "Fur immer deutsch<3"},
+    {1836736337, 80, "Wandering"},
+    {1845932062, 234, "Vuelve A Mi A"},
+    {1836743584, 235, "You Aint Hot"},
+    {1840041842, 190, "Till the Mornin"},
+    {6708444383, 190, "beats"},
+    {6924735395, 150, "Every time"},
+    {13530438299, 140, "Beats"},
+    {6942391979, 170, "ariashot"},
+    {6913550990, 200, "FNAF"},
+    {1846458016, 200, "no more"},
+    {6924735395, 200, "For me"},
+    {1838457617, 200, "Clair De Lune"},
+    {6872126938, 200, "Young - Vacations"},
+    {6823597327, 200, "Brooklyn Blood Pop"},
+    {9047050075, 200, "Lofi Hiphop"},
+    {9043887091, 200, "Lofi Chill"},
+    {1839707719, 200, "Sweet Dance Song"},
+    {1837870681, 200, "Autumn Leaves"},
+    {5410082534, 150, "dubstep"},
+    {5410082097, 200, "Bad Computer"},
+    {5410080857, 200, "F.O.O.L & Midranger - Neon"},
+    {5410084346, 240, "Pixel Terror - Amnesia"},
+    {1837843587, 220, "a Bit of Rock"},
+    {6828176320, 200, "Rolling Stones - Paint it Black"},
+    {6772846771, 230, "Thats a bop"},
+    {6806140478, 150, "Sad N**ga Hours"},
+    {6953866301, 140, "MONTAGEM - EMPINA NA ONDA"},
+    {6788646778, 200, "Hella Sketchy - Rare Gem"},
+    {7006487793, 200, "Saw you at the Party"},
+    {6973084731, 230, "Britney Speirs - Till the World Ends"},
+    {6925558165, 200, "Situation Critical - Platinum Blonde"},
+}
+
+local function sendPlaylistReminder()
+    while true do
+        game.Players:Chat("m/ \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n❤️Soar's Playlist❤️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+        wait(math.random(60, 140))
+    end
+end
+
+local soundFolder = workspace:FindFirstChild("Game")
+if soundFolder then
+    local sounds = soundFolder:GetDescendants()
+    for _, sound in ipairs(sounds) do
+        if sound:IsA("Sound") and not sound.PlayOnRemove then
+            sound.PlayOnRemove = true
+        end
+    end
+end
+
+
+spawn(sendPlaylistReminder)
+
+
+local function shuffleSongIds()
+    local currentIndex = #songIds
+    while currentIndex > 1 do
+        local randomIndex = math.random(1, currentIndex)
+        songIds[currentIndex], songIds[randomIndex] = songIds[randomIndex], songIds[currentIndex]
+        currentIndex = currentIndex - 1
+    end
+end
+
+local audioEnabled = true
+local audioObjects = {}  -- To store references to audio objects
+
+local function enableAudio()
+    if not audioEnabled then
+        audioEnabled = true
+        game.Players:Chat("h/ n\n\n\n\n\n\n\n\n\nAudio enabled\n\n\n\n\n\n\n\n")
+        for _, audioObj in ipairs(audioObjects) do
+            audioObj.Volume = 1
+        end
+    end
+end
+
+local isPaused = false
+local wasPaused = false
+
+local function pauseAudio()
+    while isPaused do
+        for _, sound in pairs(workspace.Terrain._Game.Folder:GetDescendants()) do
+            if sound:IsA("Sound") and sound.Playing then
+                sound.Playing = false
+            end
+        end
+
+        if not wasPaused then
+            game.Players:Chat("h/ n\n\n\n\n\n\n\n\n\nPaused\n\n\n\n\n\n\n\n")
+            wasPaused = true
+        end
+        wait()
+    end
+    wasPaused = false
+end
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if string.sub(msg:lower(), 1, 10) == "!pdelaudio" then 
+        isPaused = true
+        pauseAudio()
+    elseif string.sub(msg:lower(), 1, 11) == "!ploadaudio" then
+        isPaused = false
+        for _, sound in pairs(workspace.Terrain._Game.Folder:GetDescendants()) do
+            if sound:IsA("Sound") and not sound.Playing then
+                sound.Playing = true
+            end
+        end
+        game.Players:Chat("h/ n\n\n\n\n\n\n\n\n\nPlaying\n\n\n\n\n\n\n\n")
+    end
+end)
+
+
+local function disableAudio()
+    if audioEnabled then
+        audioEnabled = false
+        for _, sound in pairs(workspace:GetDescendants()) do
+            if sound:IsA("Sound") or sound:IsA("SoundGroup") then
+                table.insert(audioObjects, sound)  -- Store references to audio objects
+                sound.Volume = 0
+            end
+        end
+        game.Players:Chat("h/ n\n\n\n\n\n\n\n\n\nAudio disabled\n\n\n\n\n\n\n\n")
+    end
+end
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "!delaudio" then
+        disableAudio()
+    elseif msg == "!loadaudio" then
+        enableAudio()
+    end
+end)
+
+-- Hook into the creation of new audio objects and disable them if audio is disabled
+workspace.DescendantAdded:Connect(function(obj)
+    if not audioEnabled and (obj:IsA("Sound") or obj:IsA("SoundGroup")) then
+        table.insert(audioObjects, obj)  -- Store references to new audio objects
+        obj.Volume = 0
+    end
+end)
+
+local currentIndex = 0
+
+
+local function playNextSong()
+  
+    currentIndex = currentIndex + 1
+
+    
+    if currentIndex > #songIds then
+        currentIndex = 1
+        shuffleSongIds()
+    end
+
+    local currentSong = songIds[currentIndex]
+    local currentSongId = currentSong[1]
+    local currentSongDuration = currentSong[2]
+    local currentSongName = currentSong[3]
+
+    game.Players:Chat('music ' .. tostring(currentSongId))
+
+    game.Players:Chat("h \n\n\n\n\n\n\n\n\n\n\nNow playing: \n" .. currentSongName .. "\n\n\n\n\n\n\n\n\n\n\n")
+
+    local elapsedTime = 0
+    while elapsedTime < currentSongDuration do
+        wait(1)
+        elapsedTime = elapsedTime + 1
+    end
+
+    playNextSong()
+end
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "!clean" then
+       game.Players:Chat('fix')
+       game.Players:Chat('removejails')
+       game.Players:Chat('removeclones')
+       game.Players:Chat('ungear me                                                               others fuck')
+       end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "!soarcrash" then
+        game.Players:Chat('h/ SoarCrash')
+game.Players:Chat("music 1836807218")
+game.Players:Chat('h/ SoarCrash')
+game.Players:Chat('respawn all all all//')
+wait(0.30)
+for i=1,10 do
+for i=1,99 do
+    game.Players:Chat("shield/all all all youknowsoar")
+    game.Players:Chat('dog all all all justsoar')
+    game.Players:Chat('rocket/all/all/all doingsoarstuff')
+    game.Players:Chat('tp all me')
+    game.Players:Chat('clone all all all')
+    end
+wait(.5)
+for i=1,10 do
+wait(.5)
+game.Players:Chat('clone all all all')
+game.Players:Chat('tp all me')
+game.Players:Chat("shield/all all all fuck")                                                                                                        
+
+for i=1,10 do
+for i=1,99 do
+    game.Players:Chat("shield/all all all soarfuckedthis")
+    game.Players:Chat('dog all all all ordidshe')
+    game.Players:Chat('rocket/all/all/all urgamesweak')
+end
+wait(.5)
+for i=1,10 do
+wait(.5)
+game.Players:Chat("shield/all all all fuck")
+game.Players:Chat('tp all me')
+game.Players:Chat('clone all all all')
+end
+end
+end
+end
+
+   end
+end)
+
+game.Players:Chat("m/ \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n❤️Now playing from Soar's Playlist❤️\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+
+wait(5)
+
+
+shuffleSongIds()
+
+
+playNextSong()
