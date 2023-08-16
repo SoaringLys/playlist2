@@ -1,5 +1,5 @@
 game.Players.LocalPlayer.Chatted:Connect(function(msg) -- i need to delete old !delaudio
-    if string.sub(msg:lower(), 0, 5) == "pause" then 
+if string.sub(msg:lower(), 0, 5) == "pause" then 
         for _, sound in pairs(workspace.Terrain._Game.Folder:GetDescendants()) do
             if sound:IsA("Sound") and sound.Playing then
                 sound.Playing = false
