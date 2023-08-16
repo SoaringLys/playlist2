@@ -230,7 +230,7 @@ local function disableAudio()
         audioEnabled = false
         for _, sound in pairs(workspace:GetDescendants()) do
             if sound:IsA("Sound") or sound:IsA("SoundGroup") then
-                table.insert(audioObjects, sound)  -idek
+                table.insert(audioObjects, sound)
                 sound.Volume = 0
             end
         end
