@@ -163,6 +163,32 @@ if soundFolder then
     end
 end
 
+local function selectAudio(audio)
+                
+                    local currentSong = songIds[audio]
+                    local currentSongId = currentSong[1]
+                    local currentSongDuration = currentSong[2]
+                    local currentSongName = currentSong[3]
+                
+                    game.Players:Chat('music ' .. tostring(currentSongId))
+                
+                    game.Players:Chat("h \n\n\n\n\n\n\n\n\n\n\nNow playing: \n" .. currentSongName .. "\n\n\n\n\n\n\n\n\n\n\n")
+                
+                    local elapsedTime = 0
+                    while elapsedTime < currentSongDuration do
+                        wait(1)
+                        elapsedTime = elapsedTime + 1
+                    end
+                
+                    playNextSong()
+                end 
+
+                game.Players.LocalPlayer.Chatted:Connect(function(msg)
+                    if string.sub(msg:lower(), 1, 7) == "!select" then 
+                        s = msg:split(" ")
+                        selectAudio(tonumber(s[2]))
+                    end 
+                end)
 
 spawn(sendPlaylistReminder)
 
