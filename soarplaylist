@@ -36,6 +36,48 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 end)
 
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "!iceblue" then
+        game.Players:Chat("time 12:00")
+        game.Players:Chat("ambient 100 100 100") 
+        game.Players:Chat("outdoorambient 50 50 50") 
+        game.Players:Chat("colorshiftbottom 173 216 230")
+        game.Players:Chat("colorshifttop 173 216 230")
+        game.Players:Chat("fogend 500")
+        game.Players:Chat("fogstart 100")
+        game.Players:Chat("fogcolor 173 216 230") 
+        game.Players:Chat("glow all 160 20 150")
+    end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "!dusk" then
+        game.Players:Chat("time 18:00")
+        game.Players:Chat("ambient 80 80 80")
+        game.Players:Chat("outdoorambient 40 40 40")
+        game.Players:Chat("colorshiftbottom 150 204 155")
+        game.Players:Chat("colorshifttop 150 204 155")
+        game.Players:Chat("fogend 800")
+        game.Players:Chat("fogstart 200")
+        game.Players:Chat("fogcolor 150 204 155")
+        game.Players:Chat("glow all 200 150 50")
+    end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "!mood" then
+        game.Players:Chat("time 20:00")
+        game.Players:Chat("ambient 30 30 40")
+        game.Players:Chat("outdoorambient 20 20 30")
+        game.Players:Chat("colorshiftbottom 60 50 70")
+        game.Players:Chat("colorshifttop 60 50 70")
+        game.Players:Chat("fogend 1000")
+        game.Players:Chat("fogstart 50")
+        game.Players:Chat("fogcolor 30 20 40")
+        game.Players:Chat("glow all 50 30 80")
+    end
+end)
+
 
 local songIds = {
     {9043892984, 200, "dele mami"},
