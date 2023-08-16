@@ -249,7 +249,7 @@ end)
 -- Hook into the creation of new audio objects and disable them if audio is disabled
 workspace.DescendantAdded:Connect(function(obj)
     if not audioEnabled and (obj:IsA("Sound") or obj:IsA("SoundGroup")) then
-        table.insert(audioObjects, obj)  -- Store references to new audio objects
+        table.insert(audioObjects, obj) 
         obj.Volume = 0
     end
 end)
