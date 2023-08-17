@@ -469,6 +469,7 @@ local songIds = {
     {7006487793, 200, "Saw you at the Party"},
     {6973084731, 230, "Britney Speirs - Till the World Ends"},
     {6925558165, 200, "Situation Critical - Platinum Blonde"},
+    {6781116057, 200, "Deja Vu"},
 }
 
 local function sendPlaylistReminder()
