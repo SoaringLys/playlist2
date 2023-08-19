@@ -1,4 +1,4 @@
-game.Players.LocalPlayer.Chatted:Connect(function(msg) -- i need to delete old !delaudio
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
 if string.sub(msg:lower(), 0, 5) == "pause" then 
         for _, sound in pairs(workspace.Terrain._Game.Folder:GetDescendants()) do
             if sound:IsA("Sound") and sound.Playing then
@@ -78,7 +78,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 end)
 
-  
    game.Players.LocalPlayer.Chatted:Connect(function(msg)
  if msg == "!loadvis" then
     task.wait(3)
@@ -404,6 +403,26 @@ end)
         end
 end)
 
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "!clean" then
+       game.Players:Chat('fix')
+       game.Players:Chat('removejails')
+       game.Players:Chat('removeclones')
+       game.Players:Chat('ungear me                                                               others fuck')
+       end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+if string.sub(msg:lower(), 0, 5) == "!noob" then 
+    game.Players:Chat('char t 4')
+    wait(0.4)
+    game.Players:Chat('hat t 4877167549')
+    game.Players:Chat('tshirt t 8865956111')
+     end
+end)
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg) -- i need to delete old !delaudio
+if string.sub(msg:lower(), 0, 9) == "!playlist" then
 local songIds = {
     {9043892984, 200, "dele mami"},
     {9043878179, 200, "Kikbak ft Styliztik & Kaisha"},
@@ -529,7 +548,7 @@ local function shuffleSongIds()
 end
 
 local audioEnabled = true
-local audioObjects = {}  -- To store references to audio objects
+local audioObjects = {} 
 
 local function enableAudio()
     if not audioEnabled then
@@ -598,7 +617,6 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 end)
 
--- Hook into the creation of new audio objects and disable them if audio is disabled
 workspace.DescendantAdded:Connect(function(obj)
     if not audioEnabled and (obj:IsA("Sound") or obj:IsA("SoundGroup")) then
         table.insert(audioObjects, obj) 
@@ -636,15 +654,6 @@ local function playNextSong()
 
     playNextSong()
 end
-
-game.Players.LocalPlayer.Chatted:Connect(function(msg)
-    if msg == "!clean" then
-       game.Players:Chat('fix')
-       game.Players:Chat('removejails')
-       game.Players:Chat('removeclones')
-       game.Players:Chat('ungear me                                                               others fuck')
-       end
-end)
 
 game.Players.LocalPlayer.Chatted:Connect(function(msg)
     if msg == "!soarcrash" then
@@ -697,3 +706,6 @@ shuffleSongIds()
 
 
 playNextSong()
+
+ end
+end)
