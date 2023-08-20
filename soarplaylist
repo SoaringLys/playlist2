@@ -78,8 +78,8 @@ game.Players.LocalPlayer.Chatted:Connect(function(msg)
     end
 end)
 
-   game.Players.LocalPlayer.Chatted:Connect(function(msg)
- if msg == "!loadvis" then
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+if string.sub(msg:lower(), 0, 4) == "!vis" then 
     task.wait(3)
 repeat wait() until game.Players.LocalPlayer.Character
 getgenv().prefix = ""
