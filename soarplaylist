@@ -96,45 +96,6 @@ if string.sub(msg:lower(), 0, 5) == "!noob" then
      end
 end)
 
-game.Players.LocalPlayer.Chatted:Connect(function(msg)
-    if msg == "!soarcrash" then
-        game.Players:Chat('h/ SoarCrash')
-game.Players:Chat("music 1836807218")
-game.Players:Chat('h/ SoarCrash')
-game.Players:Chat('respawn all all all//')
-wait(0.30)
-for i=1,10 do
-for i=1,99 do
-    game.Players:Chat("shield/all all all youknowsoar")
-    game.Players:Chat('dog all all all justsoar')
-    game.Players:Chat('rocket/all/all/all doingsoarstuff')
-    game.Players:Chat('tp all me')
-    game.Players:Chat('clone all all all')
-    end
-wait(.5)
-for i=1,10 do
-wait(.5)
-game.Players:Chat('clone all all all')
-game.Players:Chat('tp all me')
-game.Players:Chat("shield/all all all fuckin soar is cool")                                                                                                        
-
-for i=1,10 do
-for i=1,99 do
-    game.Players:Chat("shield/all all all soarfuckedthis")
-    game.Players:Chat('dog all all all ordidshe')
-    game.Players:Chat('rocket/all/all/all urgamesweak')
-end
-wait(.5)
-for i=1,10 do
-wait(.5)
-game.Players:Chat("shield/all all all fuckin noobs")
-game.Players:Chat('tp all me')
-game.Players:Chat('clone all all all')
-end
-end
-end
-end
-
 game.Players.LocalPlayer.Chatted:Connect(function(msg) -- i need to delete old !delaudio
 if string.sub(msg:lower(), 0, 9) == "!playlist" then
 local songIds = {
@@ -381,6 +342,46 @@ wait(5)
 
 
 shuffleSongIds()
+
+game.Players.LocalPlayer.Chatted:Connect(function(msg)
+    if msg == "!soarcrash" then
+        game.Players:Chat('h/ SoarCrash')
+game.Players:Chat("music 1836807218")
+game.Players:Chat('h/ SoarCrash')
+game.Players:Chat('respawn all all all//')
+wait(0.30)
+for i=1,10 do
+for i=1,99 do
+    game.Players:Chat("shield/all all all youknowsoar")
+    game.Players:Chat('dog all all all justsoar')
+    game.Players:Chat('rocket/all/all/all doingsoarstuff')
+    game.Players:Chat('tp all me')
+    game.Players:Chat('clone all all all')
+    end
+wait(.5)
+for i=1,10 do
+wait(.5)
+game.Players:Chat('clone all all all')
+game.Players:Chat('tp all me')
+game.Players:Chat("shield/all all all fuckin soar is cool")                                                                                                        
+
+for i=1,10 do
+for i=1,99 do
+    game.Players:Chat("shield/all all all soarfuckedthis")
+    game.Players:Chat('dog all all all ordidshe')
+    game.Players:Chat('rocket/all/all/all urgamesweak')
+end
+wait(.5)
+for i=1,10 do
+wait(.5)
+game.Players:Chat("shield/all all all fuckin noobs")
+game.Players:Chat('tp all me')
+game.Players:Chat('clone all all all')
+end
+end
+end
+end
+
 
 
 playNextSong()
